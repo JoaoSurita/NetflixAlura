@@ -13,7 +13,8 @@
 }
 
 /* Corpo da página e fundo Netflix-like */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -94,7 +95,7 @@ h1 {
 }
 
 .profile img:hover {
-    border: 3px solid #fff; 
+    border: 3px solid #fff;
 }
 
 .profile p {
@@ -111,4 +112,97 @@ h1 {
     h1 {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
     }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .profile img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 54px;
+    }
+
+    .profile img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .profile img {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+/* Light mode styles */
+body.light-mode {
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 35%, #e0e0e0 100%);
+    color: #141414;
+}
+
+body.light-mode h1 {
+    color: #141414;
+}
+
+body.light-mode .profile p {
+    color: #141414;
+}
+
+body.light-mode .profile img:hover {
+    border: 3px solid #141414;
+}
+
+/* Toggle switch styles */
+#theme-toggle {
+    display: none;
+}
+
+.toggle-switch {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:checked + .toggle-switch {
+    background: var(--primary);
+}
+
+#theme-toggle:checked + .toggle-switch::before {
+    transform: translateX(30px);
 }
